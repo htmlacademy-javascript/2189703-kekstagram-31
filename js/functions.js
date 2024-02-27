@@ -105,3 +105,38 @@ getIntegers('а я томат');
 
 getIntegers(1.5);
 
+
+// Напишите функцию, которая принимает время начала и конца рабочего дня, а также время старта и продолжительность встречи в минутах и возвращает true, если встреча не выходит за рамки рабочего дня, и false, если выходит.
+
+/*
+'8:00' - начало рабочего дня
+'17:30' - конец рабочего дня
+'14:00' - начало встречи
+90 - продолжительность встречи в минутах
+*/
+// имяФункции('08:00', '17:30', '14:00', 90); // true
+// имяФункции('8:0', '10:0', '8:0', 120);     // true
+// имяФункции('08:00', '14:30', '14:00', 90); // false
+// имяФункции('14:00', '17:30', '08:0', 90);  // false
+// имяФункции('8:00', '17:30', '08:00', 900); // false
+
+function isMeetingTakePlase (startDay, endDay, startMeeting, lengthMeeting) {
+  const isTimeMinut = function (string) {
+    const array = string.split(':');
+    return +array[0] * 60 + (+array[1]);
+  };
+
+  const startDayMinutes = isTimeMinut(startDay);
+  const endDayMinutes = isTimeMinut(endDay);
+  const startMeetingMinutes = isTimeMinut(startMeeting);
+  const endMeetingMinutes = startMeetingMinutes + lengthMeeting;
+
+  return (startMeetingMinutes >= startDayMinutes && endMeetingMinutes <= endDayMinutes);
+
+}
+
+isMeetingTakePlase('08:00', '17:30', '14:00', 90);
+isMeetingTakePlase('8:0', '10:0', '8:0', 120);
+isMeetingTakePlase('08:00', '14:30', '14:00', 90);
+isMeetingTakePlase('14:00', '17:30', '08:0', 90);
+isMeetingTakePlase('8:00', '17:30', '08:00', 900);
