@@ -1,6 +1,6 @@
 import {getRandomInteger} from './utils';
 
-const DESCRIPTION_PHONO = [
+const DESCRIPTION_PHOTO = [
   'Пустой городской пляж с лежаками вокруг озера.',
   'Указатель дороги на пляж.',
   'Валуны на берегу.',
@@ -80,7 +80,7 @@ const photoDescription = (count) => {
     photoObject = {
       id: i,
       url: `${i }.jpg`,
-      description: DESCRIPTION_PHONO[i - 1],
+      description: DESCRIPTION_PHOTO[i - 1],
       likes: getRandomInteger(minLikes, maxLikes),
       comments: comments()
     };
