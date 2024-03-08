@@ -44,6 +44,8 @@ const AUTOR__COMMENT = [
   'Артём',
 ];
 
+const NUMBER_PHOTOS = 25;
+
 // comments, массив объектов — список комментариев, оставленных другими пользователями к этой фотографии.
 const minComment = 0;
 const maxComment = 30;
@@ -61,7 +63,7 @@ const comments = () => {
 
     commentObject = {
       id: i,
-      avatar: `img/avatar${ j + 1 }.svg`,
+      avatar: `img/avatar-${ j + 1 }.svg`,
       message: MESSAGE[j],
       name: AUTOR__COMMENT[j]
     };
@@ -89,4 +91,6 @@ const photoDescription = (count) => {
   return photoArray;
 };
 
-export {photoDescription};
+const photosData = photoDescription(NUMBER_PHOTOS);
+
+export {photosData};

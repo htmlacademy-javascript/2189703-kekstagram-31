@@ -1,5 +1,6 @@
-import {photoDescription} from './data';
-import './mini-gallery';
+import {photosData} from './data';
+import {renderMiniGallery} from './mini-gallery';
+import {miniGalleryClick} from './big-photo';
 
-const NUMBER_PHOTOS = 25;
-photoDescription(NUMBER_PHOTOS);
+renderMiniGallery(photosData);
+miniGalleryClick();
