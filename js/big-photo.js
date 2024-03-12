@@ -68,7 +68,7 @@ function loadComments () {
   });
   let commentsCount = PART_COMMENTS;
 
-  const load = () => {
+  const loadPartComments = () => {
     if (commentsAllShow.length > commentsCount) {
       commentShowCount.textContent = commentsCount;
       buttonCommentsLoad.classList.remove('hidden');
@@ -82,10 +82,10 @@ function loadComments () {
       comment.classList.remove('hidden');
     });
   };
-  load();
+  loadPartComments();
   buttonCommentsLoad.addEventListener('click', () => {
     commentsCount += PART_COMMENTS;
-    load();
+    loadPartComments();
   });
 }
 
